@@ -1,0 +1,9 @@
+.vscode
+*.pyc
+*.txt
+*.pth
+__pycache__
+checkpoint
+result
+runs
+.ssh*

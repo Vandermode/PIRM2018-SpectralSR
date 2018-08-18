@@ -1,5 +1,5 @@
 from .pirm import EDSR
-from .pirm import MEMEDSR
+from .pirm import EMSR
 
 
 """PIRM Baseline"""
@@ -39,7 +39,7 @@ def emsrx2():
     return net
 
 def emsrx3():
-    net = MEMEDSR(n_resblocks=6, n_memblocks=6, in_channels=14, n_feats=256, scale=3, res_scale=1)
+    net = EMSR(n_resblocks=6, n_memblocks=6, in_channels=14, n_feats=256, scale=3, res_scale=1)
     net.use_2dconv = True
     net.bandwise = False
     net.use_upsample = True

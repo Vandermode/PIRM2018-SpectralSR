@@ -126,7 +126,8 @@ def MSIQA(X, Y):
     appsa = find_appsa(Y, X)
     mse = find_mse(Y, X)
 
-    return {'PSNR': psnr, 'SSIM': ssim, 'MRAE': mrae, 'SID': sid, 'APPSA': appsa, 'MSE': mse}
+    return {'MRAE': mrae, 'SID': sid}
+    # return {'PSNR': psnr, 'SSIM': ssim, 'MRAE': mrae, 'SID': sid, 'APPSA': appsa, 'MSE': mse}
 
 
 def quantify_img(img):

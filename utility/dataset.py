@@ -2,19 +2,13 @@
 import torch
 import torchvision
 import random
-import cv2
-
-try: 
-    from .util import *
-except:
-    from util import *
+import os
 
 from torchvision.transforms import Compose, ToPILImage, ToTensor, RandomHorizontalFlip, RandomChoice
 from torch.utils.data import DataLoader, Dataset
 from torchnet.dataset import TransformDataset, SplitDataset, TensorDataset, ResampleDataset
 
-from PIL import Image
-
+from scipy.io import loadmat
 
 class HSI2Tensor(object):
     """

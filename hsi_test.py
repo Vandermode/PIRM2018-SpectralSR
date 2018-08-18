@@ -32,19 +32,13 @@ if __name__ == '__main__':
 
     mat_dataset = MatDataFromFolder('/data/zhangtao/pirm2018/validation')
 
-    if engine.get_net().use_upsample:
-        input_transform = lambda x: x
-    else:
-        input_transform = lambda x: cv2.resize(x.transpose((1, 2, 0)), (480, 240)).transpose((2, 0, 1))
-
     transform = Compose([
         lambda x: x/ 65535.,
-        
     ])
 
     mat_transform = Compose([
         LoadMatHSI(input_key='lr'+str(scale_factor), gt_key='hr', 
-        transform=transform, input_transform=input_transform, use_2dconv=engine.get_net().use_2dconv)
+        transform=transform, use_2dconv=engine.get_net().use_2dconv)
     ])
     
     mat_dataset = TransformDataset(mat_dataset, mat_transform)
@@ -59,7 +53,7 @@ if __name__ == '__main__':
 
     test_transform = Compose([
         LoadMatHSI(input_key='lr'+str(scale_factor), gt_key=None, with_filename=True,
-        transform=transform, input_transform=input_transform, use_2dconv=engine.get_net().use_2dconv)
+        transform=transform, use_2dconv=engine.get_net().use_2dconv)
     ])
 
     test_dataset = TransformDataset(test_dataset, test_transform)

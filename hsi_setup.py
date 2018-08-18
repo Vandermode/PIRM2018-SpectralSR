@@ -221,8 +221,6 @@ class Engine(object):
             self.best_loss = best_model['loss']
 
         print('==> Resuming from checkpoint %s..' % resumePath)
-        assert os.path.isdir(
-            'checkpoint'), 'Error: no checkpoint directory found!'
         checkpoint = torch.load(resumePath or model_best_path)
         self.epoch = checkpoint['epoch']
         self.iterations = checkpoint['iterations']
