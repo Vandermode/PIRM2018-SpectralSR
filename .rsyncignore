@@ -1,0 +1,14 @@
+.vscode
+*.pyc
+*.txt
+*.pth
+__pycache__
+checkpoint
+result
+runs
+lmdb_data.py
+.ssh*
+.git
+hsi_single_sr.py
+data
+envi
