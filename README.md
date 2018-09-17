@@ -1,4 +1,5 @@
 # PIRM2018-SpectralSR-Team-Grit
+**The 2-nd place solution, which won the runner-up award in PIRM spectral super-resolution challenge.**
 The repo now contains the testing codes which enable user to validate/test the pretrained model on testing/validation set
 
 ## Installation
